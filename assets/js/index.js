@@ -6,7 +6,18 @@ const score = {
 
 // get the user choice using prompt
 const getUserChoice = function () {
-  return "R";
+  // prompt the user to enter choice
+  const userChoice = prompt(
+    "Please select Rock (R), Paper (P) or Scissors (S)"
+  );
+
+  // validate the choice
+  // if not valid then present and alert
+  if (userChoice === "R" || userChoice === "P" || userChoice === "S") {
+    return userChoice;
+  } else {
+    alert("Please select one of the following: R, P or S");
+  }
 };
 
 // get the random computer choice
