@@ -4,6 +4,8 @@ const score = {
   ties: 0,
 };
 
+const choices = ["R", "P", "S"];
+
 // get the user choice using prompt
 const getUserChoice = function () {
   // prompt the user to enter choice
@@ -22,7 +24,11 @@ const getUserChoice = function () {
 
 // get the random computer choice
 const getComputerChoice = function () {
-  return "P";
+  // generate an index between 0 and 2
+  const randomIndex = 2;
+
+  // use the random index to get the random choice
+  return choices[randomIndex];
 };
 
 // for the 2 player choices check game logic
