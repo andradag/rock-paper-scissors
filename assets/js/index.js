@@ -46,16 +46,25 @@ const gameLogic = function (player1, player2) {
   }
 };
 
-//update the player 1's scores depending on the game outcome
+// update the player 1's scores depending on the game outcome
 const updateScore = function (gameOutcome) {
-  //update wind if win
-  //update losses if lose
+  // update wind if win
+  if (gameOutcome === "win") {
+    score.wins += 1;
+  }
+  // update losses if lose
+  if (gameOutcome === "lost") {
+    score.losses -= 1;
+  }
   // update ties if tie
+  if (gameOutcome === "tie") {
+    score.wins += 1;
+  }
 };
 
 // display the score of player in the console logs
 const displayScore = function () {
-  //console log the score
+  // console log the score
   console.log(
     "Score: W - " +
       score.wins +
