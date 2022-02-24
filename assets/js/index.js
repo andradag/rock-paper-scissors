@@ -55,9 +55,9 @@ const gameLogic = function (player1, player2) {
 
   if (player1 === "S" && player2 === "P") {
     return "win";
+  } else {
+    return "tie";
   }
-
-  return "tie";
 };
 
 // update the player 1's scores depending on the game outcome
@@ -68,11 +68,11 @@ const updateScore = function (gameOutcome) {
   }
   // update losses if lose
   if (gameOutcome === "lose") {
-    score.losses -= 1;
+    score.losses += 1;
   }
   // update ties if tie
   if (gameOutcome === "tie") {
-    score.wins += 1;
+    score.ties += 1;
   }
 };
 
