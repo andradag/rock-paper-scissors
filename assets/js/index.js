@@ -33,7 +33,17 @@ const getComputerChoice = function () {
 
 // for the 2 player choices check game logic
 const gameLogic = function (player1, player2) {
-  return "win";
+  if (player1 === "R" && player2 === "P") {
+    return "lose";
+  }
+
+  if (player1 === "R" && player2 === "S") {
+    return "win";
+  }
+
+  if (player1 === "R" && player2 === "P") {
+    return "tie";
+  }
 };
 
 //update the player 1's scores depending on the game outcome
