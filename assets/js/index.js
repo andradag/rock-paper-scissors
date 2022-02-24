@@ -25,7 +25,7 @@ const getUserChoice = function () {
 // get the random computer choice
 const getComputerChoice = function () {
   // generate an index between 0 and 2
-  const randomIndex = 2;
+  const randomIndex = Math.floor(Math.random() * choices.length + 0);
 
   // use the random index to get the random choice
   return choices[randomIndex];
