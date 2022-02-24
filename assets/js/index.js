@@ -41,9 +41,23 @@ const gameLogic = function (player1, player2) {
     return "win";
   }
 
-  if (player1 === "R" && player2 === "P") {
-    return "tie";
+  if (player1 === "P" && player2 === "R") {
+    return "win";
   }
+
+  if (player1 === "P" && player2 === "S") {
+    return "lose";
+  }
+
+  if (player1 === "S" && player2 === "R") {
+    return "lose";
+  }
+
+  if (player1 === "S" && player2 === "P") {
+    return "win";
+  }
+
+  return "tie";
 };
 
 // update the player 1's scores depending on the game outcome
@@ -53,7 +67,7 @@ const updateScore = function (gameOutcome) {
     score.wins += 1;
   }
   // update losses if lose
-  if (gameOutcome === "lost") {
+  if (gameOutcome === "lose") {
     score.losses -= 1;
   }
   // update ties if tie
@@ -63,7 +77,8 @@ const updateScore = function (gameOutcome) {
 };
 
 // display the score of player in the console logs
-const displayScore = function () {
+const displayScore = function (gameOutcome) {
+  console.log("Game Outcome: " + gameOutcome);
   // console log the score
   console.log(
     "Score: W - " +
@@ -92,12 +107,13 @@ const playGame = function () {
   updateScore(gameOutcome);
 
   // display the scores
-  displayScore();
+  displayScore(gameOutcome);
 };
 
 // present the user with a confirm model yes/no
 const playAgain = function () {
-  return false;
+  const isPlayAgain = confirm("Do you want to play again?");
+  return isPlayAgain;
 };
 // declare a variable to track game in progress
 
