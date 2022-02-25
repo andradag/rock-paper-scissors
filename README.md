@@ -1,4 +1,4 @@
-# Rock, paper, Scissors
+# Rock, Paper, Scissors Game
 
 - a game using only JavaScript.
 
